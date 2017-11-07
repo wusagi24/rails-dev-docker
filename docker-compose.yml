@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  # MySQL とか PostgreSQL とか使うときは別コンテナで立てて繋ぐ想定
+
+  # db:
+  # image: mysql:5.7
+  # volumes:
+  # - "./.data/db/mysql:/var/lib/mysql"
+  # ports:
+  # - "3306:3306"
+  # restart: always
+  # environment:
+  # MYSQL_ROOT_PASSWORD: wordpress
+  # MYSQL_DATABASE: "local_resona"
+  # MYSQL_USER: resona
+  # MYSQL_PASSWORD: resona
+
+  web:
+    # depends_on:
+    # - db
+    build: .
+    volumes:
+      - "$PWD/data:/home/rails/data"
+    ports:
+      - "3000:3000"
+    command: "tail -f /dev/null"
+    restart: always
