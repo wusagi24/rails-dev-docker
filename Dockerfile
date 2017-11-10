@@ -23,5 +23,4 @@ RUN groupadd rails && \
 
 USER rails
 
-RUN sudo gem install rails
-
+RUN gem install bundler rails
