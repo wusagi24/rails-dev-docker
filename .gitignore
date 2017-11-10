@@ -1,5 +1,6 @@
 # my add
 /data/*
+/.data
 
 # Windows thumbnail cache files
 Thumbs.db
